@@ -16,6 +16,7 @@ from flask import Flask, jsonify, render_template, redirect, request, session, s
 # Setup Stripe python client library
 load_dotenv(find_dotenv())
 stripe.api_key = os.getenv('STRIPE_SECRET_KEY')
+print(os.getenv('STRIPE_SECRET_KEY'))
 stripe.api_version = os.getenv('STRIPE_API_VERSION', '2019-12-03')
 
 static_dir = str(os.path.abspath(os.path.join(__file__ , "..", os.getenv("STATIC_DIR"))))
